@@ -99,7 +99,7 @@ bool validity()
 			
 			if( !gameData.castled[turn] )
 			{
-				if( cond3 && !underAttack(fr,fc-1) && !underAttack(fr,fc-2) && !underAttack(fr,fc-3) )
+				if( cond3 && !underAttack(fr,fc-1) && !underAttack(fr,fc-2) ) //&& !underAttack(fr,fc-3) )
 				{
 					requestGrantedCastling = true;
 					return true;

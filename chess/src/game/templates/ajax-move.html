@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Chessboard </title>
+
+	<link type="text/css" rel='stylesheet' href="{% static 'css/chessboard.css' %}">
+
+	<script
+  		src="https://code.jquery.com/jquery-2.2.4.min.js"
+  		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  		crossorigin="anonymous">
+  	</script>
+
+	<script src="{% static 'js/ajax-move.js' %}"></script>
+</head>
+
+<body>
+
+<div id="div1"></div>
+
+<table>
+
+{% for row in ['1','2'] %}
+
+<tr id="row"+row>
+	<img id='11-2' src="{% static 'image/dark_on_bg.png' %}" class='piece' draggable="true" ondragstart="drag(event)">
+
+	<!--
+	{% for col in ['1','2'] %}
+
+	<td id="td"+row+col ondrop="drop(event)" ondragover="allowDrop(event)"> 
+		<img id=row+col+"-2" src=
+		{% if %} 
+
+		{% endif %}
+		class='piece'
+		{% if %} 
+
+		{% endif %} 
+		>
+
+		<img id=row+col+"-1" src="{% static 'image/bg.png' %}" class='background'>
+	</td>
+
+	{% endfor %}
+-->
+</tr>
+
+{% endfor %}
+
+
+<!--
+<tr id='row1'>
+	<td id='td11' ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<img id='11-2' src="{% static 'image/dark_on_bg.png' %}" class='piece' draggable="true" ondragstart="drag(event)">
+		<img id='11-1' src="{% static 'image/bg.png' %}" class='background'>
+		
+	</td>
+
+	<td id='td12' ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<img id='12-2' src="{% static 'image/bg.png' %}" class='piece' draggable="false">
+		<img id='12-1' src="{% static 'image/bg.png' %}" class='background'>
+		
+	</td>
+
+</tr>
+<tr id='row2'>
+	<td id='td21' ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<img id='21-2' src="{% static 'image/bg.png' %}" class='piece' draggable="false">
+		<img id='21-1' src="{% static 'image/bg.png' %}" class='background'>
+		
+	</td>
+
+	<td id='td22' ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<img id='22-2' src="{% static 'image/light_on_bg.png' %}" class='piece' draggable="true" ondragstart="drag(event)">
+		<img id='22-1' src="{% static 'image/bg.png' %}" class='background'>
+		
+	</td>
+
+</tr>
+-->
+
+</table>
+
+</body>
+</html>

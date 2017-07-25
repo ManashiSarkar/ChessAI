@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Chessboard </title>
+
+	<link  rel='stylesheet' href="{% static 'css/chessboard.css' %}">
+
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous">
+	</script>
+
+	<script src="{% static 'js/chessboard.js' %}"></script>
+	
+</head>
+
+<!-- 
+
+	<div id=board turn=white/black player=A/B disabled>       // deals with highest level of permissions
+		<div id=row#>
+			<span id=row#col# bg=dark/light camp=white/black piece=piece_name src=''> //draggable can be based on camp
+			</span>
+		</div>
+	</div>
+	6
+	5
+	4
+	3
+	2
+	1
+-->
+<body>
+
+	<div id='board' turn={{ turn }} player={{ player }}> <!-- overall permissions -->
+		{% csrf_token %}
+		<div id='8'> <!-- block display -->
+			<span id='par81'> <!-- parent control -->
+				<img id='81' height='70' width='70' bg='light' camp='black' piece='rook' rules='' src="{% static 'image/light/black/rook.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par82'> <!-- parent control -->
+				<img id='82' height='70' width='70' bg='dark' camp='black' piece='knight' rules='' src="{% static 'image/dark/black/knight.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par83'> <!-- parent control -->
+				<img id='83' height='70' width='70' bg='light' camp='black' piece='bishop' rules='' src="{% static 'image/light/black/bishop.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par84'> <!-- parent control -->
+				<img id='84' height='70' width='70' bg='dark' camp='black' piece='queen' rules='' src="{% static 'image/dark/black/queen.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par85'> <!-- parent control -->
+				<img id='85' height='70' width='70' bg='light' camp='black' piece='king' rules='' src="{% static 'image/light/black/king.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par86'> <!-- parent control -->
+				<img id='86' height='70' width='70' bg='dark' camp='black' piece='bishop' rules='' src="{% static 'image/dark/black/bishop.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par87'> <!-- parent control -->
+				<img id='87' height='70' width='70' bg='light' camp='black' piece='knight' rules='' src="{% static 'image/light/black/knight.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par88'> <!-- parent control -->
+				<img id='88' height='70' width='70' bg='dark' camp='black' piece='rook' rules='' src="{% static 'image/dark/black/rook.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+		<div id='7'>
+			<span id='par71'> <!-- parent control -->
+				<img id='71' height='70' width='70' bg='dark' camp='black' piece='pawn' rules='' src="{% static 'image/dark/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par72'> <!-- parent control -->
+				<img id='72' height='70' width='70' bg='light' camp='black' piece='pawn' rules='' src="{% static 'image/light/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par73'> <!-- parent control -->
+				<img id='73' height='70' width='70' bg='dark' camp='black' piece='pawn' rules='' src="{% static 'image/dark/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par74'> <!-- parent control -->
+				<img id='74' height='70' width='70' bg='light' camp='black' piece='pawn' rules='' src="{% static 'image/light/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par75'> <!-- parent control -->
+				<img id='75' height='70' width='70' bg='dark' camp='black' piece='pawn' rules='' src="{% static 'image/dark/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par76'> <!-- parent control -->
+				<img id='76' height='70' width='70' bg='light' camp='black' piece='pawn' rules='' src="{% static 'image/light/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par77'> <!-- parent control -->
+				<img id='77' height='70' width='70' bg='dark' camp='black' piece='pawn' rules='' src="{% static 'image/dark/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par78'> <!-- parent control -->
+				<img id='78' height='70' width='70' bg='light' camp='black' piece='pawn' rules='' src="{% static 'image/light/black/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+		<div id='6'> <!-- block display -->
+			<span id='par61'> <!-- parent control -->
+				<img id='61' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par62'> <!-- parent control -->
+				<img id='62' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par63'> <!-- parent control -->
+				<img id='63' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par64'> <!-- parent control -->
+				<img id='64' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par65'> <!-- parent control -->
+				<img id='65' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par66'> <!-- parent control -->
+				<img id='66' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par67'> <!-- parent control -->
+				<img id='67' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par68'> <!-- parent control -->
+				<img id='68' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+		<div id='5'>
+			<span id='par51'> <!-- parent control -->
+				<img id='51' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par52'> <!-- parent control -->
+				<img id='52' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par53'> <!-- parent control -->
+				<img id='53' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par54'> <!-- parent control -->
+				<img id='54' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par55'> <!-- parent control -->
+				<img id='55' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par56'> <!-- parent control -->
+				<img id='56' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par57'> <!-- parent control -->
+				<img id='57' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par58'> <!-- parent control -->
+				<img id='58' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+		<div id='4'> <!-- block display -->
+			<span id='par41'> <!-- parent control -->
+				<img id='41' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par42'> <!-- parent control -->
+				<img id='42' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par43'> <!-- parent control -->
+				<img id='43' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par44'> <!-- parent control -->
+				<img id='44' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par45'> <!-- parent control -->
+				<img id='45' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par46'> <!-- parent control -->
+				<img id='46' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par47'> <!-- parent control -->
+				<img id='47' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par48'> <!-- parent control -->
+				<img id='48' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+
+		<div id='3'>
+			<span id='par31'> <!-- parent control -->
+				<img id='31' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par32'> <!-- parent control -->
+				<img id='32' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par33'> <!-- parent control -->
+				<img id='33' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par34'> <!-- parent control -->
+				<img id='34' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par35'> <!-- parent control -->
+				<img id='35' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par36'> <!-- parent control -->
+				<img id='36' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par37'> <!-- parent control -->
+				<img id='37' height='70' width='70' bg='dark' camp='background' piece='background' rules='' src="{% static 'image/dark/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par38'> <!-- parent control -->
+				<img id='38' height='70' width='70' bg='light' camp='background' piece='background' rules='' src="{% static 'image/light/bg.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+		<div id='2'>
+			<span id='par21'> <!-- parent control -->
+				<img id='21' height='70' width='70' bg='light' camp='white' piece='pawn' rules='' src="{% static 'image/light/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par22'> <!-- parent control -->
+				<img id='22' height='70' width='70' bg='dark' camp='white' piece='pawn' rules='' src="{% static 'image/dark/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par23'> <!-- parent control -->
+				<img id='23' height='70' width='70' bg='light' camp='white' piece='pawn' rules='' src="{% static 'image/light/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par24'> <!-- parent control -->
+				<img id='24' height='70' width='70' bg='dark' camp='white' piece='pawn' rules='' src="{% static 'image/dark/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par25'> <!-- parent control -->
+				<img id='25' height='70' width='70' bg='light' camp='white' piece='pawn' rules='' src="{% static 'image/light/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par26'> <!-- parent control -->
+				<img id='26' height='70' width='70' bg='dark' camp='white' piece='pawn' rules='' src="{% static 'image/dark/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par27'> <!-- parent control -->
+				<img id='27' height='70' width='70' bg='light' camp='white' piece='pawn' rules='' src="{% static 'image/light/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par28'> <!-- parent control -->
+				<img id='28' height='70' width='70' bg='dark' camp='white' piece='pawn' rules='' src="{% static 'image/dark/white/pawn.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+		<div id='1'> <!-- block display -->
+			<span id='par11'> <!-- parent control -->
+				<img id='11' height='70' width='70' bg='dark' camp='white' piece='rook' rules='' src="{% static 'image/dark/white/rook.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par12'> <!-- parent control -->
+				<img id='12' height='70' width='70' bg='light' camp='white' piece='knight' rules='' src="{% static 'image/light/white/knight.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par13'> <!-- parent control -->
+				<img id='13' height='70' width='70' bg='dark' camp='white' piece='bishop' rules='' src="{% static 'image/dark/white/bishop.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par14'> <!-- parent control -->
+				<img id='14' height='70' width='70' bg='light' camp='white' piece='queen' rules='' src="{% static 'image/light/white/queen.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par15'> <!-- parent control -->
+				<img id='15' height='70' width='70' bg='dark' camp='white' piece='king' rules='' src="{% static 'image/dark/white/king.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par16'> <!-- parent control -->
+				<img id='16' height='70' width='70' bg='light' camp='white' piece='bishop' rules='' src="{% static 'image/light/white/bishop.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par17'> <!-- parent control -->
+				<img id='17' height='70' width='70' bg='dark' camp='white' piece='knight' rules='' src="{% static 'image/dark/white/knight.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+			<span id='par18'> <!-- parent control -->
+				<img id='18' height='70' width='70' bg='light' camp='white' piece='rook' rules='' src="{% static 'image/light/white/rook.png' %}" draggable=false ondragstart='drag(event)' ondragover="allowDrop(event)" ondrop='drop(event)'>
+			</span>
+		</div>
+	</div>
+
+</body>
+
+</html>

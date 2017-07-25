@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Chessboard </title>
+
+	<link  rel='stylesheet' href="{% static 'css/chessboard.css' %}">
+
+	<script src="{% static 'js/chessboard.js' %}"></script>
+
+
+<!-- script -->
+
+	
+</head>
+
+<body>
+
+<!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> </div> -->
+
+<div id="div1">This is div</div>
+
+<table id='chessboard' style="border: 0px;" border-collapse>
+<tr id='row1'>
+	<td id='td11' ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<img id='11-2' src="{% static 'image/light/black/rook.jpg' %}" class='piece' draggable="false" row='1' col='1' bg='light' camp='black' piece='rook'>
+		<img id='11-1' src="{% static 'image/light.jpg' %}" class='background'>
+		
+	</td>
+
+	<td id='td12' ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<img id='12-2' src="{% static 'image/dark/black/knight.jpg' %}" class='piece' draggable="false" row='1' col='2' bg='dark' camp='black' piece='knight'>
+		<img id='12-1' src="{% static 'image/dark.jpg' %}" class='background'>
+		
+	</td>
+
+</tr>
+<tr id='row2'>
+	<td id='td21'>
+		
+		<img id='21-2' src="{% static 'image/dark/white/rook.jpg' %}" class='piece' draggable="true" ondragstart='drag(event)' row='2' col='1' bg='dark' camp='white' piece='rook'>
+		<img id='21-1' src="{% static 'image/dark.jpg' %}" class='background'>
+		
+	</td>
+
+	<td id='td22'>
+		
+		<img id='22-2' src="{% static 'image/light/white/knight.jpg' %}" class='piece' draggable="true" ondragstart='drag(event)' row='2' col='2' bg='light' camp='white' piece='knight'>
+		<img id='22-1' src="{% static 'image/light.jpg' %}" class='background'>
+		
+	</td>
+
+</tr>
+</table>
+
+</body>
+</html>

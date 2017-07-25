@@ -1,0 +1,72 @@
+
+newgame:1 , generation:1
+
+ R N B Q K B N R
+ P P P P P P P P
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+ . . . . . . . .
+ P P P P P P P P
+ R N B Q K B N R
+TURN=99
+is_in_check=0
+in pawn, camp=W
+R=2 C=1 i=1 sign=1
+R=2 C=1 i=2 sign=1
+R=2 C=1 i=1 sign=1
+R=2 C=1 i=2 sign=1
+R=2 C=1 i=1 sign=1
+R=2 C=1 i=2 sign=1
+in pawn, camp=W
+R=2 C=2 i=1 sign=1
+R=2 C=2 i=2 sign=1
+R=2 C=2 i=1 sign=1
+R=2 C=2 i=2 sign=1
+R=2 C=2 i=1 sign=1
+R=2 C=2 i=2 sign=1
+in pawn, camp=W
+R=2 C=3 i=1 sign=1
+R=2 C=3 i=2 sign=1
+R=2 C=3 i=1 sign=1
+R=2 C=3 i=2 sign=1
+R=2 C=3 i=1 sign=1
+R=2 C=3 i=2 sign=1
+in pawn, camp=W
+R=2 C=4 i=1 sign=1
+R=2 C=4 i=2 sign=1
+R=2 C=4 i=1 sign=1
+R=2 C=4 i=2 sign=1
+R=2 C=4 i=1 sign=1
+R=2 C=4 i=2 sign=1
+in pawn, camp=W
+R=2 C=5 i=1 sign=1
+R=2 C=5 i=2 sign=1
+R=2 C=5 i=1 sign=1
+R=2 C=5 i=2 sign=1
+R=2 C=5 i=1 sign=1
+R=2 C=5 i=2 sign=1
+in pawn, camp=W
+R=2 C=6 i=1 sign=1
+R=2 C=6 i=2 sign=1
+R=2 C=6 i=1 sign=1
+R=2 C=6 i=2 sign=1
+R=2 C=6 i=1 sign=1
+R=2 C=6 i=2 sign=1
+in pawn, camp=W
+R=2 C=7 i=1 sign=1
+R=2 C=7 i=2 sign=1
+R=2 C=7 i=1 sign=1
+R=2 C=7 i=2 sign=1
+R=2 C=7 i=1 sign=1
+R=2 C=7 i=2 sign=1
+in pawn, camp=W
+R=2 C=8 i=1 sign=1
+R=2 C=8 i=2 sign=1
+R=2 C=8 i=1 sign=1
+R=2 C=8 i=2 sign=1
+R=2 C=8 i=1 sign=1
+R=2 C=8 i=2 sign=1
+stalemate=1
+-659481.687500 1580643.000000 1948283.625000 1023689.375000 587136.500000 -1817376.125000 1185694.375000 302247.656250 585294.000000 1041127.625000 3823.673096 -98508.726562 -1600558.250000 -1575147.750000 718559.875000 -2109934.500000 288380.750000 
+-----------------------------------------
